@@ -1,7 +1,7 @@
 ﻿
 namespace ComputerStore
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -30,10 +30,10 @@ namespace ComputerStore
         private void InitializeComponent()
         {
             this.labelName = new System.Windows.Forms.Label();
-            this.buttonCatalogs = new System.Windows.Forms.Button();
+            this.buttonCustomers = new System.Windows.Forms.Button();
             this.buttonProducts = new System.Windows.Forms.Button();
             this.buttonOrders = new System.Windows.Forms.Button();
-            this.buttonCustomers = new System.Windows.Forms.Button();
+            this.buttonStuff = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelName
@@ -45,15 +45,16 @@ namespace ComputerStore
             this.labelName.TabIndex = 0;
             this.labelName.Text = "Компьютерный магазин";
             // 
-            // buttonCatalogs
+            // buttonCustomers
             // 
-            this.buttonCatalogs.AutoSize = true;
-            this.buttonCatalogs.Location = new System.Drawing.Point(291, 108);
-            this.buttonCatalogs.Name = "buttonCatalogs";
-            this.buttonCatalogs.Size = new System.Drawing.Size(134, 27);
-            this.buttonCatalogs.TabIndex = 1;
-            this.buttonCatalogs.Text = "Товарные группы";
-            this.buttonCatalogs.UseVisualStyleBackColor = true;
+            this.buttonCustomers.AutoSize = true;
+            this.buttonCustomers.Location = new System.Drawing.Point(291, 108);
+            this.buttonCustomers.Name = "buttonCustomers";
+            this.buttonCustomers.Size = new System.Drawing.Size(134, 27);
+            this.buttonCustomers.TabIndex = 1;
+            this.buttonCustomers.Text = "Покупатели";
+            this.buttonCustomers.UseVisualStyleBackColor = true;
+            this.buttonCustomers.Click += new System.EventHandler(this.buttonCatalogs_Click);
             // 
             // buttonProducts
             // 
@@ -64,6 +65,7 @@ namespace ComputerStore
             this.buttonProducts.TabIndex = 2;
             this.buttonProducts.Text = "Товары";
             this.buttonProducts.UseVisualStyleBackColor = true;
+            this.buttonProducts.Click += new System.EventHandler(this.buttonProducts_Click);
             // 
             // buttonOrders
             // 
@@ -75,28 +77,29 @@ namespace ComputerStore
             this.buttonOrders.Text = "Заказы";
             this.buttonOrders.UseVisualStyleBackColor = true;
             // 
-            // buttonCustomers
+            // buttonStuff
             // 
-            this.buttonCustomers.AutoSize = true;
-            this.buttonCustomers.Location = new System.Drawing.Point(291, 256);
-            this.buttonCustomers.Name = "buttonCustomers";
-            this.buttonCustomers.Size = new System.Drawing.Size(134, 27);
-            this.buttonCustomers.TabIndex = 4;
-            this.buttonCustomers.Text = "Покупатели";
-            this.buttonCustomers.UseVisualStyleBackColor = true;
+            this.buttonStuff.AutoSize = true;
+            this.buttonStuff.Location = new System.Drawing.Point(291, 255);
+            this.buttonStuff.Name = "buttonStuff";
+            this.buttonStuff.Size = new System.Drawing.Size(134, 27);
+            this.buttonStuff.TabIndex = 4;
+            this.buttonStuff.Text = "Сотрудники";
+            this.buttonStuff.UseVisualStyleBackColor = true;
+            this.buttonStuff.Click += new System.EventHandler(this.buttonStuff_Click);
             // 
-            // Form1
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonCustomers);
+            this.Controls.Add(this.buttonStuff);
             this.Controls.Add(this.buttonOrders);
             this.Controls.Add(this.buttonProducts);
-            this.Controls.Add(this.buttonCatalogs);
+            this.Controls.Add(this.buttonCustomers);
             this.Controls.Add(this.labelName);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormMain";
+            this.Text = "Меню";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,10 +108,10 @@ namespace ComputerStore
         #endregion
 
         private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.Button buttonCatalogs;
+        private System.Windows.Forms.Button buttonCustomers;
         private System.Windows.Forms.Button buttonProducts;
         private System.Windows.Forms.Button buttonOrders;
-        private System.Windows.Forms.Button buttonCustomers;
+        private System.Windows.Forms.Button buttonStuff;
     }
 }
 

@@ -10,11 +10,32 @@ using System.Windows.Forms;
 
 namespace ComputerStore
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
-        public Form1()
+        private FormCatalogs catalogs;
+        private FormProducts products;
+        private FormStuff stuff;
+        public FormMain()
         {
             InitializeComponent();
+        }
+
+        private void buttonStuff_Click(object sender, EventArgs e)
+        {
+            stuff = new FormStuff();
+            stuff.Visible = true;
+        }
+
+        private void buttonCatalogs_Click(object sender, EventArgs e)
+        {
+            catalogs = new FormCatalogs();
+            catalogs.Visible = true;
+        }
+
+        private void buttonProducts_Click(object sender, EventArgs e)
+        {
+            products = new FormProducts();
+            products.Visible = true;
         }
     }
 }
