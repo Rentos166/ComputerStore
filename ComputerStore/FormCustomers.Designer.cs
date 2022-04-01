@@ -44,7 +44,7 @@ namespace ComputerStore
             this.labelLasName = new System.Windows.Forms.Label();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.labelCustomers = new System.Windows.Forms.Label();
-            this.listViewStuff = new System.Windows.Forms.ListView();
+            this.listViewCustomers = new System.Windows.Forms.ListView();
             this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -71,6 +71,7 @@ namespace ComputerStore
             this.buttonDel.TabIndex = 35;
             this.buttonDel.Text = "Удалить";
             this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // buttonEdit
             // 
@@ -80,6 +81,7 @@ namespace ComputerStore
             this.buttonEdit.TabIndex = 34;
             this.buttonEdit.Text = "Изменить";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonAdd
             // 
@@ -89,6 +91,7 @@ namespace ComputerStore
             this.buttonAdd.TabIndex = 33;
             this.buttonAdd.Text = "Создать";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // labelEmail
             // 
@@ -121,6 +124,7 @@ namespace ComputerStore
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(100, 22);
             this.textBoxPhone.TabIndex = 27;
+            this.textBoxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPhone_KeyPress);
             // 
             // labelMidName
             // 
@@ -179,24 +183,25 @@ namespace ComputerStore
             this.labelCustomers.TabIndex = 20;
             this.labelCustomers.Text = "Покупатели";
             // 
-            // listViewStuff
+            // listViewCustomers
             // 
-            this.listViewStuff.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewCustomers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Id,
             this.LastName,
             this.FirstName,
             this.MiddleName,
             this.Phone,
             this.Email});
-            this.listViewStuff.FullRowSelect = true;
-            this.listViewStuff.GridLines = true;
-            this.listViewStuff.HideSelection = false;
-            this.listViewStuff.Location = new System.Drawing.Point(284, 115);
-            this.listViewStuff.Name = "listViewStuff";
-            this.listViewStuff.Size = new System.Drawing.Size(460, 235);
-            this.listViewStuff.TabIndex = 55;
-            this.listViewStuff.UseCompatibleStateImageBehavior = false;
-            this.listViewStuff.View = System.Windows.Forms.View.Details;
+            this.listViewCustomers.FullRowSelect = true;
+            this.listViewCustomers.GridLines = true;
+            this.listViewCustomers.HideSelection = false;
+            this.listViewCustomers.Location = new System.Drawing.Point(284, 115);
+            this.listViewCustomers.Name = "listViewCustomers";
+            this.listViewCustomers.Size = new System.Drawing.Size(460, 235);
+            this.listViewCustomers.TabIndex = 55;
+            this.listViewCustomers.UseCompatibleStateImageBehavior = false;
+            this.listViewCustomers.View = System.Windows.Forms.View.Details;
+            this.listViewCustomers.SelectedIndexChanged += new System.EventHandler(this.listViewCustomers_SelectedIndexChanged);
             // 
             // Id
             // 
@@ -231,7 +236,7 @@ namespace ComputerStore
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listViewStuff);
+            this.Controls.Add(this.listViewCustomers);
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonEdit);
@@ -249,6 +254,7 @@ namespace ComputerStore
             this.Controls.Add(this.labelCustomers);
             this.Name = "FormCustomers";
             this.Text = "Покупатели";
+            this.Load += new System.EventHandler(this.FormCustomers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -272,7 +278,7 @@ namespace ComputerStore
         private System.Windows.Forms.Label labelLasName;
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.Label labelCustomers;
-        private System.Windows.Forms.ListView listViewStuff;
+        private System.Windows.Forms.ListView listViewCustomers;
         private System.Windows.Forms.ColumnHeader Id;
         private System.Windows.Forms.ColumnHeader LastName;
         private System.Windows.Forms.ColumnHeader FirstName;

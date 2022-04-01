@@ -33,16 +33,13 @@ namespace ComputerStore
             this.buttonDel = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.labelSum = new System.Windows.Forms.Label();
-            this.textBoxSum = new System.Windows.Forms.TextBox();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelNum = new System.Windows.Forms.Label();
             this.textBoxNumber = new System.Windows.Forms.TextBox();
             this.labelProduct = new System.Windows.Forms.Label();
             this.labelCustomer = new System.Windows.Forms.Label();
             this.labelCustomers = new System.Windows.Forms.Label();
-            this.listViewStuff = new System.Windows.Forms.ListView();
-            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
+            this.listViewOrders = new System.Windows.Forms.ListView();
             this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FIO_Cust = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ProdName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -51,10 +48,12 @@ namespace ComputerStore
             this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Sum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FIO_Stuff = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
             this.labelStuff = new System.Windows.Forms.Label();
             this.comboBoxCustomer = new System.Windows.Forms.ComboBox();
             this.comboBoxProduct = new System.Windows.Forms.ComboBox();
             this.comboBoxStuff = new System.Windows.Forms.ComboBox();
+            this.Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +74,7 @@ namespace ComputerStore
             this.buttonDel.TabIndex = 67;
             this.buttonDel.Text = "Удалить";
             this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // buttonEdit
             // 
@@ -84,6 +84,7 @@ namespace ComputerStore
             this.buttonEdit.TabIndex = 66;
             this.buttonEdit.Text = "Изменить";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonAdd
             // 
@@ -93,27 +94,12 @@ namespace ComputerStore
             this.buttonAdd.TabIndex = 65;
             this.buttonAdd.Text = "Создать";
             this.buttonAdd.UseVisualStyleBackColor = true;
-            // 
-            // labelSum
-            // 
-            this.labelSum.AutoSize = true;
-            this.labelSum.Location = new System.Drawing.Point(96, 292);
-            this.labelSum.Name = "labelSum";
-            this.labelSum.Size = new System.Drawing.Size(54, 17);
-            this.labelSum.TabIndex = 64;
-            this.labelSum.Text = "Сумма:";
-            // 
-            // textBoxSum
-            // 
-            this.textBoxSum.Location = new System.Drawing.Point(156, 287);
-            this.textBoxSum.Name = "textBoxSum";
-            this.textBoxSum.Size = new System.Drawing.Size(100, 22);
-            this.textBoxSum.TabIndex = 63;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // labelDate
             // 
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(4, 259);
+            this.labelDate.Location = new System.Drawing.Point(4, 246);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(46, 17);
             this.labelDate.TabIndex = 62;
@@ -134,6 +120,7 @@ namespace ComputerStore
             this.textBoxNumber.Name = "textBoxNumber";
             this.textBoxNumber.Size = new System.Drawing.Size(100, 22);
             this.textBoxNumber.TabIndex = 59;
+            this.textBoxNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumber_KeyPress);
             // 
             // labelProduct
             // 
@@ -162,33 +149,28 @@ namespace ComputerStore
             this.labelCustomers.TabIndex = 54;
             this.labelCustomers.Text = "Заказы";
             // 
-            // listViewStuff
+            // listViewOrders
             // 
-            this.listViewStuff.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewOrders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Id,
             this.FIO_Cust,
             this.ProdName,
             this.ProdGroup,
+            this.Price,
             this.Number,
             this.Date,
             this.Sum,
             this.FIO_Stuff});
-            this.listViewStuff.FullRowSelect = true;
-            this.listViewStuff.GridLines = true;
-            this.listViewStuff.HideSelection = false;
-            this.listViewStuff.Location = new System.Drawing.Point(284, 102);
-            this.listViewStuff.Name = "listViewStuff";
-            this.listViewStuff.Size = new System.Drawing.Size(460, 235);
-            this.listViewStuff.TabIndex = 53;
-            this.listViewStuff.UseCompatibleStateImageBehavior = false;
-            this.listViewStuff.View = System.Windows.Forms.View.Details;
-            // 
-            // dateTimePickerDate
-            // 
-            this.dateTimePickerDate.Location = new System.Drawing.Point(56, 259);
-            this.dateTimePickerDate.Name = "dateTimePickerDate";
-            this.dateTimePickerDate.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerDate.TabIndex = 69;
+            this.listViewOrders.FullRowSelect = true;
+            this.listViewOrders.GridLines = true;
+            this.listViewOrders.HideSelection = false;
+            this.listViewOrders.Location = new System.Drawing.Point(284, 102);
+            this.listViewOrders.Name = "listViewOrders";
+            this.listViewOrders.Size = new System.Drawing.Size(537, 235);
+            this.listViewOrders.TabIndex = 53;
+            this.listViewOrders.UseCompatibleStateImageBehavior = false;
+            this.listViewOrders.View = System.Windows.Forms.View.Details;
+            this.listViewOrders.SelectedIndexChanged += new System.EventHandler(this.listViewOrders_SelectedIndexChanged);
             // 
             // Id
             // 
@@ -197,6 +179,7 @@ namespace ComputerStore
             // FIO_Cust
             // 
             this.FIO_Cust.Text = "ФИО покупателя";
+            this.FIO_Cust.Width = 87;
             // 
             // ProdName
             // 
@@ -221,11 +204,19 @@ namespace ComputerStore
             // FIO_Stuff
             // 
             this.FIO_Stuff.Text = "ФИО сотрудника";
+            this.FIO_Stuff.Width = 94;
+            // 
+            // dateTimePickerDate
+            // 
+            this.dateTimePickerDate.Location = new System.Drawing.Point(56, 246);
+            this.dateTimePickerDate.Name = "dateTimePickerDate";
+            this.dateTimePickerDate.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerDate.TabIndex = 69;
             // 
             // labelStuff
             // 
             this.labelStuff.AutoSize = true;
-            this.labelStuff.Location = new System.Drawing.Point(68, 318);
+            this.labelStuff.Location = new System.Drawing.Point(68, 284);
             this.labelStuff.Name = "labelStuff";
             this.labelStuff.Size = new System.Drawing.Size(82, 17);
             this.labelStuff.TabIndex = 71;
@@ -250,16 +241,20 @@ namespace ComputerStore
             // comboBoxStuff
             // 
             this.comboBoxStuff.FormattingEnabled = true;
-            this.comboBoxStuff.Location = new System.Drawing.Point(156, 318);
+            this.comboBoxStuff.Location = new System.Drawing.Point(156, 284);
             this.comboBoxStuff.Name = "comboBoxStuff";
             this.comboBoxStuff.Size = new System.Drawing.Size(121, 24);
             this.comboBoxStuff.TabIndex = 74;
+            // 
+            // Price
+            // 
+            this.Price.Text = "Цена";
             // 
             // FormOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(854, 450);
             this.Controls.Add(this.comboBoxStuff);
             this.Controls.Add(this.comboBoxProduct);
             this.Controls.Add(this.comboBoxCustomer);
@@ -269,17 +264,16 @@ namespace ComputerStore
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.labelSum);
-            this.Controls.Add(this.textBoxSum);
             this.Controls.Add(this.labelDate);
             this.Controls.Add(this.labelNum);
             this.Controls.Add(this.textBoxNumber);
             this.Controls.Add(this.labelProduct);
             this.Controls.Add(this.labelCustomer);
             this.Controls.Add(this.labelCustomers);
-            this.Controls.Add(this.listViewStuff);
+            this.Controls.Add(this.listViewOrders);
             this.Name = "FormOrders";
             this.Text = "Заказы";
+            this.Load += new System.EventHandler(this.FormOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -292,15 +286,13 @@ namespace ComputerStore
         private System.Windows.Forms.Button buttonDel;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Label labelSum;
-        private System.Windows.Forms.TextBox textBoxSum;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Label labelNum;
         private System.Windows.Forms.TextBox textBoxNumber;
         private System.Windows.Forms.Label labelProduct;
         private System.Windows.Forms.Label labelCustomer;
         private System.Windows.Forms.Label labelCustomers;
-        private System.Windows.Forms.ListView listViewStuff;
+        private System.Windows.Forms.ListView listViewOrders;
         private System.Windows.Forms.DateTimePicker dateTimePickerDate;
         private System.Windows.Forms.ColumnHeader Id;
         private System.Windows.Forms.ColumnHeader FIO_Cust;
@@ -314,5 +306,6 @@ namespace ComputerStore
         private System.Windows.Forms.ComboBox comboBoxCustomer;
         private System.Windows.Forms.ComboBox comboBoxProduct;
         private System.Windows.Forms.ComboBox comboBoxStuff;
+        private System.Windows.Forms.ColumnHeader Price;
     }
 }
