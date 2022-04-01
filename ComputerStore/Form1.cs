@@ -12,9 +12,10 @@ namespace ComputerStore
 {
     public partial class FormMain : Form
     {
-        private FormCatalogs catalogs;
+        private FormCustomers customer;
         private FormProducts products;
         private FormStuff stuff;
+        private FormOrders orders;
         public FormMain()
         {
             InitializeComponent();
@@ -28,14 +29,20 @@ namespace ComputerStore
 
         private void buttonCatalogs_Click(object sender, EventArgs e)
         {
-            catalogs = new FormCatalogs();
-            catalogs.Visible = true;
+            customer = new FormCustomers();
+            customer.Visible = true;
         }
 
         private void buttonProducts_Click(object sender, EventArgs e)
         {
             products = new FormProducts();
             products.Visible = true;
+        }
+
+        private void buttonOrders_Click(object sender, EventArgs e)
+        {
+            orders = new FormOrders();
+            orders.Visible = true;
         }
     }
 }

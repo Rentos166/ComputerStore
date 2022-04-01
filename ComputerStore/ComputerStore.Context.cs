@@ -13,10 +13,10 @@ namespace ComputerStore
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ComputerStoreEntities : DbContext
+    public partial class ComputerStoreEntities1 : DbContext
     {
-        public ComputerStoreEntities()
-            : base("name=ComputerStoreEntities")
+        public ComputerStoreEntities1()
+            : base("name=ComputerStoreEntities1")
         {
         }
     

@@ -44,7 +44,13 @@ namespace ComputerStore
             this.labelLasName = new System.Windows.Forms.Label();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.labelCustomers = new System.Windows.Forms.Label();
-            this.listViewCostumers = new System.Windows.Forms.ListView();
+            this.listViewStuff = new System.Windows.Forms.ListView();
+            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MiddleName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Phone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,23 +179,59 @@ namespace ComputerStore
             this.labelCustomers.TabIndex = 20;
             this.labelCustomers.Text = "Покупатели";
             // 
-            // listViewCostumers
+            // listViewStuff
             // 
-            this.listViewCostumers.FullRowSelect = true;
-            this.listViewCostumers.GridLines = true;
-            this.listViewCostumers.HideSelection = false;
-            this.listViewCostumers.Location = new System.Drawing.Point(292, 102);
-            this.listViewCostumers.Name = "listViewCostumers";
-            this.listViewCostumers.Size = new System.Drawing.Size(460, 224);
-            this.listViewCostumers.TabIndex = 19;
-            this.listViewCostumers.UseCompatibleStateImageBehavior = false;
-            this.listViewCostumers.View = System.Windows.Forms.View.Details;
+            this.listViewStuff.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Id,
+            this.LastName,
+            this.FirstName,
+            this.MiddleName,
+            this.Phone,
+            this.Email});
+            this.listViewStuff.FullRowSelect = true;
+            this.listViewStuff.GridLines = true;
+            this.listViewStuff.HideSelection = false;
+            this.listViewStuff.Location = new System.Drawing.Point(284, 115);
+            this.listViewStuff.Name = "listViewStuff";
+            this.listViewStuff.Size = new System.Drawing.Size(460, 235);
+            this.listViewStuff.TabIndex = 55;
+            this.listViewStuff.UseCompatibleStateImageBehavior = false;
+            this.listViewStuff.View = System.Windows.Forms.View.Details;
+            // 
+            // Id
+            // 
+            this.Id.Text = "Id";
+            // 
+            // LastName
+            // 
+            this.LastName.Text = "Фамилия";
+            this.LastName.Width = 90;
+            // 
+            // FirstName
+            // 
+            this.FirstName.Text = "Имя";
+            // 
+            // MiddleName
+            // 
+            this.MiddleName.Text = "Отчество";
+            this.MiddleName.Width = 82;
+            // 
+            // Phone
+            // 
+            this.Phone.Text = "Телефон";
+            this.Phone.Width = 84;
+            // 
+            // Email
+            // 
+            this.Email.Text = "Email";
+            this.Email.Width = 80;
             // 
             // FormCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listViewStuff);
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonEdit);
@@ -205,7 +247,6 @@ namespace ComputerStore
             this.Controls.Add(this.labelLasName);
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.labelCustomers);
-            this.Controls.Add(this.listViewCostumers);
             this.Name = "FormCustomers";
             this.Text = "Покупатели";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
@@ -231,6 +272,12 @@ namespace ComputerStore
         private System.Windows.Forms.Label labelLasName;
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.Label labelCustomers;
-        private System.Windows.Forms.ListView listViewCostumers;
+        private System.Windows.Forms.ListView listViewStuff;
+        private System.Windows.Forms.ColumnHeader Id;
+        private System.Windows.Forms.ColumnHeader LastName;
+        private System.Windows.Forms.ColumnHeader FirstName;
+        private System.Windows.Forms.ColumnHeader MiddleName;
+        private System.Windows.Forms.ColumnHeader Phone;
+        private System.Windows.Forms.ColumnHeader Email;
     }
 }

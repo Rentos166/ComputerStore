@@ -76,6 +76,7 @@ namespace ComputerStore
             this.buttonOrders.TabIndex = 3;
             this.buttonOrders.Text = "Заказы";
             this.buttonOrders.UseVisualStyleBackColor = true;
+            this.buttonOrders.Click += new System.EventHandler(this.buttonOrders_Click);
             // 
             // buttonStuff
             // 

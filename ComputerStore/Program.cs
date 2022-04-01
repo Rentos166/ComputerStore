@@ -8,6 +8,7 @@ namespace ComputerStore
 {
     static class Program
     {
+        public static ComputerStoreEntities1 csDb = new ComputerStoreEntities1();
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
